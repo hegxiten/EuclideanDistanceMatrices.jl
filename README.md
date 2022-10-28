@@ -1,4 +1,5 @@
 # EuclideanDistanceMatrices
+Highest tested version of Julia: 1.5.4 on x86_64 Windows 11/Debian Debian GNU/Linux 11 (bullseye) - Oct. 28, 2022 - Zezhou Wang
 
 [![Build Status](https://github.com/baggepinnen/EuclideanDistanceMatrices.jl/workflows/CI/badge.svg)](https://github.com/baggepinnen/EuclideanDistanceMatrices.jl/actions)
 [![Coverage](https://codecov.io/gh/baggepinnen/EuclideanDistanceMatrices.jl/branch/master/graph/badge.svg)](https://codecov.io/gh/baggepinnen/EuclideanDistanceMatrices.jl)
@@ -17,7 +18,7 @@ Utilities for working with matrices of squared Euclidean distances.
 ### With distance measurements
 If both noisy position estimates and noisy distance measurements are available, we can estimate the full Bayesian posterior over positions. To this end, the function `psoterior` is avialable. We demonstrate how it's used with an example, and start by generating some sythetic data:
 ```julia
-using EuclideanDistanceMatrices, Turing
+using EuclideanDistanceMatrices, Turing, Distances, LinearAlgebra
 N = 10    # Number of points
 σL = 0.1  # Location noise std
 σD = 0.01 # Distance noise std (measured in the same unit as positions)
